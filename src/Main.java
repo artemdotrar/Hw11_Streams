@@ -40,7 +40,8 @@ public class Main {
         arrayList.stream()
                 .filter(x -> x > 20)
                 .sorted(((o1, o2) -> o1.compareTo(o2)))
-                .forEach(x -> System.out.print((x *= 100) + ", "));
+                .map(x -> x *= 100)
+                .forEach(x -> System.out.print((x) + ", "));
 
         int max2 = arrayList.stream()
                 .skip(5)
@@ -53,8 +54,9 @@ public class Main {
         arrayList.stream()
                 .skip(5)
                 .limit(10)
+                .map(x -> x *= 10)
                 .sorted((o1, o2) -> o2.compareTo(o1))
-                .forEach(x -> System.out.print((x *= 10) + ", ")) ;
+                .forEach(x -> System.out.print((x += 5) + ", "));
 
     }
 }
