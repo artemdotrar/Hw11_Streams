@@ -42,7 +42,6 @@ public class Main {
                 .sorted(((o1, o2) -> o1.compareTo(o2)))
                 .forEach(x -> System.out.print((x *= 100) + ", "));
 
-
         int max2 = arrayList.stream()
                 .skip(5)
                 .limit(10)
@@ -50,17 +49,12 @@ public class Main {
                 .max((o1, o2) -> o1.compareTo(o2)).get();
         System.out.println("\n\nПропустить 5 значений листа, задать лимит в 10 значений. Найти уникальные значения и определить среди них максимальное: " + max2);
 
-
         System.out.println("\nПропустить 5 значений листа, задать лимит в 10 значений. Каждое число умножить на 10, отсортировать по убыванию, вывести значения, прибавив 5");
         arrayList.stream()
                 .skip(5)
                 .limit(10)
                 .sorted((o1, o2) -> o2.compareTo(o1))
                 .forEach(x -> System.out.print((x *= 10) + ", ")) ;
-
-
-
-
 
     }
 }
